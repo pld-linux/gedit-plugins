@@ -1,28 +1,28 @@
 Summary:	gEdit plugins
 Summary(pl):	Wtyczki dla gEdit
 Name:		gedit-plugins
-Version:	2.3.2
-Release:	2
+Version:	2.3.5
+Release:	1
 License:	GPL
 Group:		X11/Applications/Editors
 Source0:	http://ftp.gnome.org/pub/gnome/sources/%{name}/2.3/%{name}-%{version}.tar.bz2
-# Source0-md5:	36facfcf62eaa90873fe8c736c29885d
+# Source0-md5:	6925b3f5150a0e265abeb6d4657728d1
 URL:		http://gedit.sourceforge.net/
-BuildRequires:	GConf2-devel >= 2.2.0
+BuildRequires:	GConf2-devel >= 2.3.3
 BuildRequires:	autoconf
 BuildRequires:	automake
-BuildRequires:	gedit2-devel >= 2.3.2
-BuildRequires:	glib2-devel >= 2.2.0
-BuildRequires:	gtksourceview-devel >= 0.2.1
+BuildRequires:	eel-devel >= 2.3.9
+BuildRequires:	gedit2-devel >= 2.3.5
+BuildRequires:	glib2-devel >= 2.2.3
+BuildRequires:	gtksourceview-devel >= 0.6.0
 BuildRequires:	intltool >= 0.25
 BuildRequires:	libglade2-devel >= 2.0.1
-BuildRequires:	libgnomeprintui-devel >= 2.2.1
-BuildRequires:	libgnomeui-devel >= 2.2.0
+BuildRequires:	libgnomeprintui-devel >= 2.3.1
+BuildRequires:	libgnomeui-devel >= 2.3.7
 BuildRequires:	libtool
 BuildRequires:	rpm-build >= 4.1-10
-BuildRequires:	eel-devel >= 2.2.0
-Requires:	libgnomeprintui >= 2.2.1
-Requires:	gedit2 >= 2.3.2
+Requires:	gedit2 >= 2.3.5
+Requires:	libgnomeprintui >= 2.3.1
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -36,7 +36,6 @@ Wtyczki dla gEdit.
 
 %build
 %configure
-
 %{__make}
 
 %install
@@ -47,19 +46,6 @@ rm -rf $RPM_BUILD_ROOT
 
 # Remove obsoleted *.la files
 rm -f $RPM_BUILD_ROOT%{_libdir}/gedit-2/plugins/*.la
-
-# Remove files existing in gedit2 package
-rm -rf $RPM_BUILD_ROOT%{_libdir}/gedit-2/plugins/indent.gedit-plugin \
-	$RPM_BUILD_ROOT%{_libdir}/gedit-2/plugins/libindent.so \
-	$RPM_BUILD_ROOT%{_libdir}/gedit-2/plugins/shell_output.gedit-plugin \
-	$RPM_BUILD_ROOT%{_libdir}/gedit-2/plugins/libshell_output.so \
-	$RPM_BUILD_ROOT%{_libdir}/gedit-2/plugins/sort.gedit-plugin \
-	$RPM_BUILD_ROOT%{_libdir}/gedit-2/plugins/libsort.so \
-	$RPM_BUILD_ROOT%{_libdir}/gedit-2/plugins/taglist.gedit-plugin \
-	$RPM_BUILD_ROOT%{_libdir}/gedit-2/plugins/libtaglist.so \
-	$RPM_BUILD_ROOT%{_datadir}/gedit-2/glade/shell_output.glade2 \
-	$RPM_BUILD_ROOT%{_datadir}/gedit-2/glade/sort.glade2 \
-	$RPM_BUILD_ROOT%{_datadir}/gedit-2/taglist/
 
 %find_lang %{name} --with-gnome --all-name
 
