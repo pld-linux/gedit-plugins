@@ -1,18 +1,19 @@
 Summary:	gEdit plugins
 Summary(pl):	Wtyczki dla gEdit
 Name:		gedit-plugins
-Version:	2.3.1
+Version:	2.3.2
 Release:	1
 License:	GPL
 Group:		X11/Applications/Editors
 Source0:	http://ftp.gnome.org/pub/gnome/sources/%{name}/2.3/%{name}-%{version}.tar.bz2
+# Source0-md5:	36facfcf62eaa90873fe8c736c29885d
 URL:		http://gedit.sourceforge.net/
 BuildRequires:	GConf2-devel >= 2.2.0
 BuildRequires:	autoconf
 BuildRequires:	automake
-BuildRequires:	gedit2-devel >= 2.3.1
+BuildRequires:	gedit2-devel >= 2.3.2
 BuildRequires:	glib2-devel >= 2.2.0
-BuildRequires:	gtksourceview-devel
+BuildRequires:	gtksourceview-devel >= 0.2.1
 BuildRequires:	intltool >= 0.25
 BuildRequires:	libglade2-devel >= 2.0.1
 BuildRequires:	libgnomeprintui-devel >= 2.2.1
