@@ -2,7 +2,7 @@ Summary:	gEdit plugins
 Summary(pl):	Wtyczki dla gEdit
 Name:		gedit-plugins
 Version:	2.3.2
-Release:	1
+Release:	2
 License:	GPL
 Group:		X11/Applications/Editors
 Source0:	http://ftp.gnome.org/pub/gnome/sources/%{name}/2.3/%{name}-%{version}.tar.bz2
@@ -48,6 +48,19 @@ rm -rf $RPM_BUILD_ROOT
 # Remove obsoleted *.la files
 rm -f $RPM_BUILD_ROOT%{_libdir}/gedit-2/plugins/*.la
 
+# Remove files existing in gedit2 package
+rm -rf $RPM_BUILD_ROOT%{_libdir}/gedit-2/plugins/indent.gedit-plugin \
+	$RPM_BUILD_ROOT%{_libdir}/gedit-2/plugins/libindent.so \
+	$RPM_BUILD_ROOT%{_libdir}/gedit-2/plugins/shell_output.gedit-plugin \
+	$RPM_BUILD_ROOT%{_libdir}/gedit-2/plugins/libshell_output.so \
+	$RPM_BUILD_ROOT%{_libdir}/gedit-2/plugins/sort.gedit-plugin \
+	$RPM_BUILD_ROOT%{_libdir}/gedit-2/plugins/libsort.so \
+	$RPM_BUILD_ROOT%{_libdir}/gedit-2/plugins/taglist.gedit-plugin \
+	$RPM_BUILD_ROOT%{_libdir}/gedit-2/plugins/libtaglist.so \
+	$RPM_BUILD_ROOT%{_datadir}/gedit-2/glade/shell_output.glade2 \
+	$RPM_BUILD_ROOT%{_datadir}/gedit-2/glade/sort.glade2 \
+	$RPM_BUILD_ROOT%{_datadir}/gedit-2/taglist/
+
 %find_lang %{name} --with-gnome --all-name
 
 %clean
@@ -59,4 +72,3 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/gedit-2/plugins/*.so*
 %{_libdir}/gedit-2/plugins/*.gedit-plugin
 %{_datadir}/gedit-2/glade/*
-%{_datadir}/gedit-2/taglist/*
