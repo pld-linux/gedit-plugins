@@ -22,7 +22,7 @@ BuildRequires:	libtool
 BuildRequires:	rpm-build >= 4.1-10
 BuildRequires:	eel-devel >= 2.2.0
 Requires:	libgnomeprintui >= 2.2.1
-Requires:	gedit2 >= 2.3.0
+Requires:	gedit2 >= 2.3.2
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
