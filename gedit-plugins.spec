@@ -2,11 +2,12 @@ Summary:	gEdit plugins
 Summary(pl):	Wtyczki dla gEdit
 Name:		gedit-plugins
 Version:	2.3.5
-Release:	2
+Release:	3
 License:	GPL
 Group:		X11/Applications/Editors
 Source0:	http://ftp.gnome.org/pub/gnome/sources/%{name}/2.3/%{name}-%{version}.tar.bz2
 # Source0-md5:	6925b3f5150a0e265abeb6d4657728d1
+Patch0:		%{name}-ac.patch
 URL:		http://gedit.sourceforge.net/
 BuildRequires:	GConf2-devel >= 2.3.3
 BuildRequires:	autoconf
@@ -33,6 +34,7 @@ Wtyczki dla gEdit.
 
 %prep
 %setup -q
+%patch0 -p1
 
 %build
 %{__libtoolize}
