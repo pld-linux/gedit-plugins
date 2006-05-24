@@ -5,7 +5,7 @@
  dnl Start of pkg-config checks
  dnl
 -PKG_CHECK_MODULES(GEDIT, gedit-2.4 >= 2.3.5)
-+PKG_CHECK_MODULES(GEDIT, gedit >= 2.3.5)
++PKG_CHECK_MODULES(GEDIT, gedit-2.14 >= 2.3.5)
  AC_SUBST(GEDIT_CFLAGS)
  
  dnl
