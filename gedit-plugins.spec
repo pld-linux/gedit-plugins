@@ -16,7 +16,7 @@ BuildRequires:	glib2-devel >= 1:2.11.2
 BuildRequires:	gucharmap-devel >= 1.6.0
 BuildRequires:	intltool >= 0.35
 BuildRequires:	libtool
-BuildRequires:	python-pygtk-devel >= 2.9.0
+BuildRequires:	python-gnome-desktop-devel >= 2.15.2
 BuildRequires:	rpm-build >= 4.1-10
 Requires(post,preun):	GConf2 >= 2.14.0
 Requires:	gedit2 >= 2.15.2
@@ -40,7 +40,7 @@ Zestaw wtyczek dla gedita.
 %{__automake}
 %configure \
 	--enable-python
-%{__make}3C
+%{__make}
 
 %install
 rm -rf $RPM_BUILD_ROOT
