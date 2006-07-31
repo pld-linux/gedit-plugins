@@ -2,7 +2,7 @@ Summary:	gedit plugins
 Summary(pl):	Wtyczki dla gedita
 Name:		gedit-plugins
 Version:	2.15.4
-Release:	1
+Release:	2
 License:	GPL
 Group:		X11/Applications/Editors
 Source0:	http://ftp.gnome.org/pub/gnome/sources/gedit-plugins/2.15/%{name}-%{version}.tar.bz2
@@ -11,15 +11,15 @@ URL:		http://gedit.sourceforge.net/
 BuildRequires:	GConf2-devel >= 2.14.0
 BuildRequires:	autoconf
 BuildRequires:	automake
-BuildRequires:	gedit2-devel >= 2.15.4
-BuildRequires:	glib2-devel >= 1:2.12.0
-BuildRequires:	gucharmap-devel >= 1.6.0
+BuildRequires:	gedit2-devel >= 2.15.5
+BuildRequires:	glib2-devel >= 1:2.12.1
+BuildRequires:	gucharmap-devel >= 1.7.0
 BuildRequires:	intltool >= 0.35
 BuildRequires:	libtool
-BuildRequires:	python-gnome-desktop-devel >= 2.15.4
+BuildRequires:	python-gnome-desktop-devel >= 2.15.90
 BuildRequires:	rpm-build >= 4.1-10
 Requires(post,preun):	GConf2 >= 2.14.0
-Requires:	gedit2 >= 2.15.4
+Requires:	gedit2 >= 2.15.5
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -38,7 +38,6 @@ Zestaw wtyczek dla gedita.
 %{__autoconf}
 %{__autoheader}
 %{__automake}
-LDFLAGS="%{rpmldflags} -Wl,--as-needed"
 %configure \
 	--enable-python
 %{__make}
