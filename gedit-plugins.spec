@@ -1,26 +1,26 @@
 Summary:	gedit plugins
 Summary(pl):	Wtyczki dla gedita
 Name:		gedit-plugins
-Version:	2.15.5
+Version:	2.16.0
 Release:	1
 License:	GPL
 Group:		X11/Applications/Editors
-Source0:	http://ftp.gnome.org/pub/gnome/sources/gedit-plugins/2.15/%{name}-%{version}.tar.bz2
-# Source0-md5:	2b40e54ce0d35d1179a2e5f733b1c0cd
+Source0:	http://ftp.gnome.org/pub/gnome/sources/gedit-plugins/2.16/%{name}-%{version}.tar.bz2
+# Source0-md5:	db67c3c53f81809460232639f3bfef64
 URL:		http://gedit.sourceforge.net/
 BuildRequires:	GConf2-devel >= 2.14.0
 BuildRequires:	autoconf
 BuildRequires:	automake
-BuildRequires:	gedit2-devel >= 2.15.8
-BuildRequires:	glib2-devel >= 1:2.12.2
-BuildRequires:	gucharmap-devel >= 1.7.0
+BuildRequires:	gedit2-devel >= 2.16.0
+BuildRequires:	glib2-devel >= 1:2.12.3
+BuildRequires:	gucharmap-devel >= 1.8.0
 BuildRequires:	intltool >= 0.35
 BuildRequires:	libtool
-BuildRequires:	python-gnome-desktop-devel >= 2.15.90
-BuildRequires:	python-vte >= 0.13.6
+BuildRequires:	python-gnome-desktop-devel >= 2.16.0
+BuildRequires:	python-vte >= 0.14.0
 BuildRequires:	rpm-build >= 4.1-10
 Requires(post,preun):	GConf2 >= 2.14.0
-Requires:	gedit2 >= 2.15.8
+Requires:	gedit2 >= 2.16.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
