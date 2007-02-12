@@ -1,5 +1,5 @@
 Summary:	gedit plugins
-Summary(pl):	Wtyczki dla gedita
+Summary(pl.UTF-8):   Wtyczki dla gedita
 Name:		gedit-plugins
 Version:	2.17.1
 Release:	1
@@ -26,7 +26,7 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description
 A set of plugins for gedit.
 
-%description -l pl
+%description -l pl.UTF-8
 Zestaw wtyczek dla gedita.
 
 %prep
