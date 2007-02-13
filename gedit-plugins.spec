@@ -1,5 +1,5 @@
 Summary:	gedit plugins
-Summary(pl.UTF-8):   Wtyczki dla gedita
+Summary(pl.UTF-8):	Wtyczki dla gedita
 Name:		gedit-plugins
 Version:	2.16.0
 Release:	1
