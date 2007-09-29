@@ -1,27 +1,28 @@
 Summary:	gedit plugins
 Summary(pl.UTF-8):	Wtyczki dla gedita
 Name:		gedit-plugins
-Version:	2.18.0
+Version:	2.20.0
 Release:	1
 License:	GPL
 Group:		X11/Applications/Editors
-Source0:	http://ftp.gnome.org/pub/gnome/sources/gedit-plugins/2.18/%{name}-%{version}.tar.bz2
-# Source0-md5:	a2c3d02f90eab956f7e7df465d191f64
-URL:		http://gedit.sourceforge.net/
-BuildRequires:	GConf2-devel >= 2.18.0.1
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/gedit-plugins/2.20/%{name}-%{version}.tar.bz2
+# Source0-md5:	ec5be3d10ca4da4b33effad207ef35e9
+URL:		http://www.gnome.org/projects/gedit/
+BuildRequires:	GConf2-devel >= 2.20.0
 BuildRequires:	autoconf >= 2.59
 BuildRequires:	automake >= 1:1.8
-BuildRequires:	gedit2-devel >= 2.18.0
-BuildRequires:	glib2-devel >= 1:2.12.11
+BuildRequires:	gedit2-devel >= 2.20.0
+BuildRequires:	glib2-devel >= 1:2.14.1
+BuildRequires:	gtksourceview2-devel >= 2.0.0
 BuildRequires:	gucharmap-devel >= 1.10.0
-BuildRequires:	intltool >= 0.35.5
+BuildRequires:	intltool >= 0.36.1
 BuildRequires:	libtool
-BuildRequires:	python-gnome-desktop-devel >= 2.18.0
-BuildRequires:	python-vte >= 0.16.0
+BuildRequires:	python-gnome-desktop-devel >= 2.20.0
+BuildRequires:	python-vte >= 0.16.8
 BuildRequires:	rpm-build >= 4.1-10
 Requires(post,preun):	GConf2
-Requires:	gedit2 >= 2.18.0
-Requires:	python-gnome-desktop-gtksourceview >= 2.18.0
+Requires:	gedit2 >= 2.20.0
+Requires:	python-gnome-desktop-gtksourceview >= 2.20.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
