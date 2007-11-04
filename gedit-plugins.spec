@@ -2,7 +2,7 @@ Summary:	gedit plugins
 Summary(pl.UTF-8):	Wtyczki dla gedita
 Name:		gedit-plugins
 Version:	2.20.0
-Release:	1
+Release:	2
 License:	GPL
 Group:		X11/Applications/Editors
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/gedit-plugins/2.20/%{name}-%{version}.tar.bz2
@@ -23,6 +23,8 @@ BuildRequires:	rpm-build >= 4.1-10
 Requires(post,preun):	GConf2
 Requires:	gedit2 >= 2.20.0
 Requires:	python-gnome-desktop-gtksourceview >= 2.20.0
+# sr@Latn vs. sr@latin
+Conflicts:	glibc-misc < 6:2.7
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -54,8 +56,10 @@ rm -rf $RPM_BUILD_ROOT
 # Remove not needed files
 rm -f $RPM_BUILD_ROOT%{_libdir}/gedit-2/plugins/*.{la,py}
 rm -f $RPM_BUILD_ROOT%{_libdir}/gedit-2/plugins/sessionsaver/*.py
-rm -rf $RPM_BUILD_ROOT%{_datadir}/locale/no
 
+rm -rf $RPM_BUILD_ROOT%{_datadir}/locale/no
+[ -d $RPM_BUILD_ROOT%{_datadir}/locale/sr@latin ] || \
+	mv -f $RPM_BUILD_ROOT%{_datadir}/locale/sr@{Latn,latin}
 %find_lang %{name} --with-gnome --all-name
 
 %clean
