@@ -2,7 +2,7 @@ Summary:	gedit plugins
 Summary(pl.UTF-8):	Wtyczki dla gedita
 Name:		gedit-plugins
 Version:	2.22.2
-Release:	1
+Release:	2
 License:	GPL v2
 Group:		X11/Applications/Editors
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/gedit-plugins/2.22/%{name}-%{version}.tar.bz2
@@ -31,7 +31,7 @@ Requires(post,preun):	GConf2
 Requires:	gedit2 >= 2.22.0
 Requires:	python-gnome-gconf >= 2.22.0
 Requires:	python-gnome-vfs >= 2.22.0
-Requires:	python-pygtk >= 2:2.12.0
+Requires:	python-pygtk-gtk >= 2:2.12.0
 Requires:	python-pygtk-glade >= 2:2.12.0
 Requires:	python-vte >= 0.16.8
 # sr@Latn vs. sr@latin
