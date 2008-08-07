@@ -2,11 +2,12 @@ Summary:	gedit plugins
 Summary(pl.UTF-8):	Wtyczki dla gedita
 Name:		gedit-plugins
 Version:	2.22.2
-Release:	2
+Release:	3
 License:	GPL v2
 Group:		X11/Applications/Editors
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/gedit-plugins/2.22/%{name}-%{version}.tar.bz2
 # Source0-md5:	556d4171db9a5a44fdc18f403cea5fdd
+Patch0:		%{name}-configure_fix.patch
 URL:		http://www.gnome.org/projects/gedit/
 BuildRequires:	GConf2-devel >= 2.22.0
 BuildRequires:	autoconf >= 2.59
@@ -46,6 +47,7 @@ Zestaw wtyczek dla gedita.
 
 %prep
 %setup -q
+%patch0 -p1
 sed -i -e 's#sr@Latn#sr@latin#' po/LINGUAS
 mv po/sr@{Latn,latin}.po
 
