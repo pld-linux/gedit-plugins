@@ -1,0 +1,13 @@
+--- gedit-plugins-2.22.2/configure.ac.orig	2008-04-20 16:27:44.000000000 +0200
++++ gedit-plugins-2.22.2/configure.ac	2008-08-07 09:51:54.000000000 +0200
+@@ -196,8 +196,8 @@
+ }
+ EOF
+ 
+-	if /bin/sh ../libtool --mode=compile ${CC} $PYTHON_CFLAGS -c testpython.c >/dev/null 2>&1 && \
+-		/bin/sh ../libtool --mode=link ${CC} -o testpython.la -rpath `pwd` -module -avoid-version $PYTHON_LIB_LOC testpython.lo $PYTHON_LIBS $PYTHON_EXTRA_LIBS >/dev/null 2>&1 && \
++	if libtool --tag=CC --mode=compile ${CC} $PYTHON_CFLAGS -c testpython.c >/dev/null 2>&1 && \
++		libtool --tag=CC --mode=link ${CC} -o testpython.la -rpath `pwd` -module -avoid-version $PYTHON_LIB_LOC testpython.lo $PYTHON_LIBS $PYTHON_EXTRA_LIBS >/dev/null 2>&1 && \
+ 		grep 'dlname.*testpython' testpython.la >/dev/null 2>&1;
+ 	then
+ 		result=yes
