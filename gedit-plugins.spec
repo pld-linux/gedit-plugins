@@ -1,23 +1,24 @@
 Summary:	gedit plugins
 Summary(pl.UTF-8):	Wtyczki dla gedita
 Name:		gedit-plugins
-Version:	2.22.3
+Version:	2.22.4
 Release:	1
 License:	GPL v2
 Group:		X11/Applications/Editors
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/gedit-plugins/2.22/%{name}-%{version}.tar.bz2
-# Source0-md5:	95192baeb323083ff533759c578bbd1b
+# Source0-md5:	ee22585db565ef721b5faa73d430c78e
 Patch0:		%{name}-configure_fix.patch
 URL:		http://www.gnome.org/projects/gedit/
-BuildRequires:	GConf2-devel >= 2.22.0
+BuildRequires:	GConf2-devel >= 2.24.0
 BuildRequires:	autoconf >= 2.59
 BuildRequires:	automake >= 1:1.8
-BuildRequires:	gedit2-devel >= 2.22.0
+BuildRequires:	gedit2-devel >= 2.24.0
 BuildRequires:	gettext-devel
 BuildRequires:	glib2-devel >= 1:2.16.1
-BuildRequires:	gnome-vfs2-devel >= 2.22.0
+BuildRequires:	gnome-doc-utils >= 0.14.0
+BuildRequires:	gnome-vfs2-devel >= 2.24.0
 BuildRequires:	gtksourceview2-devel >= 2.2.0
-BuildRequires:	gucharmap-devel >= 1.10.0
+BuildRequires:	gucharmap-devel >= 2.24.0
 BuildRequires:	intltool >= 0.36.1
 BuildRequires:	libglade2-devel >= 1:2.6.2
 BuildRequires:	libtool
@@ -27,13 +28,12 @@ BuildRequires:	python-pygtk-devel >= 2:2.12.0
 BuildRequires:	python-vte >= 0.16.8
 BuildRequires:	rpm-build >= 4.1-10
 BuildRequires:	rpmbuild(macros) >= 1.234
-BuildRequires:	sed >= 4.0
 Requires(post,preun):	GConf2
-Requires:	gedit2 >= 2.22.0
+Requires:	gedit2 >= 2.24.0
 Requires:	python-gnome-gconf >= 2.22.0
 Requires:	python-gnome-vfs >= 2.22.0
-Requires:	python-pygtk-gtk >= 2:2.12.0
 Requires:	python-pygtk-glade >= 2:2.12.0
+Requires:	python-pygtk-gtk >= 2:2.12.0
 Requires:	python-vte >= 0.16.8
 # sr@Latn vs. sr@latin
 Conflicts:	glibc-misc < 6:2.7
@@ -68,9 +68,8 @@ rm -rf $RPM_BUILD_ROOT
 
 # Remove not needed files
 rm -f $RPM_BUILD_ROOT%{_libdir}/gedit-2/plugins/*.la
-%py_postclean %{_libdir}/gedit-2/plugins
 
-rm -rf $RPM_BUILD_ROOT%{_datadir}/locale/no
+%py_postclean %{_libdir}/gedit-2/plugins
 
 %find_lang %{name}
 
