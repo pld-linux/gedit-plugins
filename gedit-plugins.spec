@@ -1,12 +1,12 @@
 Summary:	gedit plugins
 Summary(pl.UTF-8):	Wtyczki dla gedita
 Name:		gedit-plugins
-Version:	2.26.2
+Version:	2.29.2
 Release:	1
 License:	GPL v2
 Group:		X11/Applications/Editors
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/gedit-plugins/2.26/%{name}-%{version}.tar.bz2
-# Source0-md5:	382cdc76fc1d59fcf7625be1b8afaac3
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/gedit-plugins/2.29/%{name}-%{version}.tar.bz2
+# Source0-md5:	29a6a5d05a96796d595ee86e0d817abb
 Patch0:		%{name}-codegen.patch
 URL:		http://www.gnome.org/projects/gedit/
 BuildRequires:	GConf2-devel >= 2.26.0
@@ -91,6 +91,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/gedit-2/plugins/libcharmap.so
 %attr(755,root,root) %{_libdir}/gedit-2/plugins/libdrawspaces.so
 %attr(755,root,root) %{_libdir}/gedit-2/plugins/libshowtabbar.so
+%attr(755,root,root) %{_libdir}/gedit-2/plugins/libwordcompletion.so
 %{_libdir}/gedit-2/plugins/bookmarks.gedit-plugin
 %{_libdir}/gedit-2/plugins/bracketcompletion.gedit-plugin
 %{_libdir}/gedit-2/plugins/bracketcompletion.py[co]
@@ -103,12 +104,16 @@ rm -rf $RPM_BUILD_ROOT
 %{_libdir}/gedit-2/plugins/gpdefs.py[co]
 %{_libdir}/gedit-2/plugins/joinlines.gedit-plugin
 %{_libdir}/gedit-2/plugins/joinlines.py[co]
+%{_libdir}/gedit-2/plugins/multiedit.gedit-plugin
 %{_libdir}/gedit-2/plugins/sessionsaver.gedit-plugin
 %{_libdir}/gedit-2/plugins/showtabbar.gedit-plugin
 %{_libdir}/gedit-2/plugins/smartspaces.gedit-plugin
 %{_libdir}/gedit-2/plugins/smartspaces.py[co]
 %{_libdir}/gedit-2/plugins/terminal.gedit-plugin
 %{_libdir}/gedit-2/plugins/terminal.py[co]
+%{_libdir}/gedit-2/plugins/wordcompletion.gedit-plugin
+%dir %{_libdir}/gedit-2/plugins/multiedit
+%{_libdir}/gedit-2/plugins/multiedit/*.py[co]
 %dir %{_libdir}/gedit-2/plugins/sessionsaver
 %{_libdir}/gedit-2/plugins/sessionsaver/*.py[co]
 %{_sysconfdir}/gconf/schemas/gedit-show-tabbar-plugin.schemas
