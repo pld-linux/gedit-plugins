@@ -27,6 +27,7 @@ BuildRequires:	python-pygobject-devel >= 2.16.0
 BuildRequires:	python-pygtk-devel >= 2:2.14.0
 BuildRequires:	python-vte-devel >= 0.20.0
 BuildRequires:	rpm-build >= 4.1-10
+BuildRequires:	rpm-pythonprov
 BuildRequires:	rpmbuild(macros) >= 1.234
 Requires(post,preun):	GConf2
 Requires:	gedit2 >= 2.26.0
