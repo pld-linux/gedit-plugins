@@ -1,12 +1,12 @@
 Summary:	gedit plugins
 Summary(pl.UTF-8):	Wtyczki dla gedita
 Name:		gedit-plugins
-Version:	2.29.2
+Version:	2.29.3
 Release:	1
 License:	GPL v2
 Group:		X11/Applications/Editors
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/gedit-plugins/2.29/%{name}-%{version}.tar.bz2
-# Source0-md5:	29a6a5d05a96796d595ee86e0d817abb
+# Source0-md5:	59f0fd9e77fd4a10ad8a334f986c816f
 Patch0:		%{name}-codegen.patch
 URL:		http://www.gnome.org/projects/gedit/
 BuildRequires:	GConf2-devel >= 2.26.0
@@ -79,9 +79,11 @@ rm -f $RPM_BUILD_ROOT%{_libdir}/gedit-2/plugins/*.la
 rm -rf $RPM_BUILD_ROOT
 
 %post
+%gconf_schema_install gedit-drawspaces.schemas
 %gconf_schema_install gedit-show-tabbar-plugin.schemas
 
 %preun
+%gconf_schema_uninstall gedit-drawspaces.schemas
 %gconf_schema_uninstall gedit-show-tabbar-plugin.schemas
 
 %files -f %{name}.lang
@@ -116,6 +118,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_libdir}/gedit-2/plugins/multiedit/*.py[co]
 %dir %{_libdir}/gedit-2/plugins/sessionsaver
 %{_libdir}/gedit-2/plugins/sessionsaver/*.py[co]
+%{_sysconfdir}/gconf/schemas/gedit-drawspaces.schemas
 %{_sysconfdir}/gconf/schemas/gedit-show-tabbar-plugin.schemas
 %{_datadir}/gedit-2/plugins/bookmarks
 %{_datadir}/gedit-2/plugins/drawspaces
