@@ -1,18 +1,18 @@
 Summary:	gedit plugins
 Summary(pl.UTF-8):	Wtyczki dla gedita
 Name:		gedit-plugins
-Version:	2.26.2
+Version:	2.28.0
 Release:	1
 License:	GPL v2
 Group:		X11/Applications/Editors
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/gedit-plugins/2.26/%{name}-%{version}.tar.bz2
-# Source0-md5:	382cdc76fc1d59fcf7625be1b8afaac3
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/gedit-plugins/2.28/%{name}-%{version}.tar.bz2
+# Source0-md5:	7a0068ef250f2cfe8d60a5cf0e7a7c93
 Patch0:		%{name}-codegen.patch
 URL:		http://www.gnome.org/projects/gedit/
 BuildRequires:	GConf2-devel >= 2.26.0
 BuildRequires:	autoconf >= 2.59
 BuildRequires:	automake >= 1:1.8
-BuildRequires:	gedit2-devel >= 2.26.0
+BuildRequires:	gedit2-devel >= 2.28.0
 BuildRequires:	gettext-devel
 BuildRequires:	glib2-devel >= 1:2.20.0
 BuildRequires:	gnome-doc-utils >= 0.14.0
