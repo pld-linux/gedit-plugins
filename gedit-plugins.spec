@@ -1,28 +1,28 @@
 Summary:	gedit plugins
 Summary(pl.UTF-8):	Wtyczki dla gedita
 Name:		gedit-plugins
-Version:	2.28.0
+Version:	2.30.0
 Release:	1
 License:	GPL v2
 Group:		X11/Applications/Editors
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/gedit-plugins/2.28/%{name}-%{version}.tar.bz2
-# Source0-md5:	7a0068ef250f2cfe8d60a5cf0e7a7c93
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/gedit-plugins/2.30/%{name}-%{version}.tar.bz2
+# Source0-md5:	f1200605247b3ece1212c363f0b04c1d
 Patch0:		%{name}-codegen.patch
 URL:		http://www.gnome.org/projects/gedit/
 BuildRequires:	GConf2-devel >= 2.26.0
 BuildRequires:	autoconf >= 2.59
 BuildRequires:	automake >= 1:1.8
-BuildRequires:	gedit2-devel >= 2.28.0
+BuildRequires:	gedit2-devel >= 2.30.0
 BuildRequires:	gettext-devel
 BuildRequires:	glib2-devel >= 1:2.20.0
 BuildRequires:	gnome-doc-utils >= 0.14.0
 BuildRequires:	gtk+2-devel >= 2:2.16.0
-BuildRequires:	gtksourceview2-devel >= 2.6.0
+BuildRequires:	gtksourceview2-devel >= 2.10.0
 BuildRequires:	gucharmap-devel >= 2.24.0
 BuildRequires:	intltool >= 0.40.0
 BuildRequires:	libtool
 BuildRequires:	pkgconfig
-BuildRequires:	python-gtksourceview2-devel >= 2.2.0
+BuildRequires:	python-gtksourceview2-devel >= 2.10.0
 BuildRequires:	python-pygobject-devel >= 2.16.0
 BuildRequires:	python-pygtk-devel >= 2:2.14.0
 BuildRequires:	python-vte-devel >= 0.20.0
@@ -30,8 +30,8 @@ BuildRequires:	rpm-build >= 4.1-10
 BuildRequires:	rpm-pythonprov
 BuildRequires:	rpmbuild(macros) >= 1.234
 Requires(post,preun):	GConf2
-Requires:	gedit2 >= 2.26.0
-Requires:	gtksourceview2 >= 2.6.0
+Requires:	gedit2 >= 2.30.0
+Requires:	gtksourceview2 >= 2.10.0
 Requires:	python-gnome-gconf >= 2.22.0
 Requires:	python-gnome-vfs >= 2.22.0
 Requires:	python-pygobject >= 2.16.0
@@ -60,7 +60,8 @@ Zestaw wtyczek dla gedita.
 %{__autoheader}
 %{__automake}
 %configure \
-	--enable-python
+	--enable-python \
+	--disable-silent-rules
 %{__make}
 
 %install
@@ -80,9 +81,11 @@ rm -f $RPM_BUILD_ROOT%{_libdir}/gedit-2/plugins/*.la
 rm -rf $RPM_BUILD_ROOT
 
 %post
+%gconf_schema_install gedit-drawspaces.schemas
 %gconf_schema_install gedit-show-tabbar-plugin.schemas
 
 %preun
+%gconf_schema_uninstall gedit-drawspaces.schemas
 %gconf_schema_uninstall gedit-show-tabbar-plugin.schemas
 
 %files -f %{name}.lang
@@ -92,6 +95,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/gedit-2/plugins/libcharmap.so
 %attr(755,root,root) %{_libdir}/gedit-2/plugins/libdrawspaces.so
 %attr(755,root,root) %{_libdir}/gedit-2/plugins/libshowtabbar.so
+%attr(755,root,root) %{_libdir}/gedit-2/plugins/libwordcompletion.so
 %{_libdir}/gedit-2/plugins/bookmarks.gedit-plugin
 %{_libdir}/gedit-2/plugins/bracketcompletion.gedit-plugin
 %{_libdir}/gedit-2/plugins/bracketcompletion.py[co]
@@ -100,10 +104,18 @@ rm -rf $RPM_BUILD_ROOT
 %{_libdir}/gedit-2/plugins/codecomment.py[co]
 %{_libdir}/gedit-2/plugins/colorpicker.gedit-plugin
 %{_libdir}/gedit-2/plugins/colorpicker.py[co]
+%{_libdir}/gedit-2/plugins/commander.gedit-plugin
+%dir %{_libdir}/gedit-2/plugins/commander
+%{_libdir}/gedit-2/plugins/commander/*.py[co]
+%dir %{_libdir}/gedit-2/plugins/commander/commands
+%{_libdir}/gedit-2/plugins/commander/commands/*.py[co]
 %{_libdir}/gedit-2/plugins/drawspaces.gedit-plugin
 %{_libdir}/gedit-2/plugins/gpdefs.py[co]
 %{_libdir}/gedit-2/plugins/joinlines.gedit-plugin
 %{_libdir}/gedit-2/plugins/joinlines.py[co]
+%{_libdir}/gedit-2/plugins/multiedit.gedit-plugin
+%dir %{_libdir}/gedit-2/plugins/multiedit
+%{_libdir}/gedit-2/plugins/multiedit/*.py[co]
 %{_libdir}/gedit-2/plugins/sessionsaver.gedit-plugin
 %{_libdir}/gedit-2/plugins/showtabbar.gedit-plugin
 %{_libdir}/gedit-2/plugins/smartspaces.gedit-plugin
@@ -112,7 +124,10 @@ rm -rf $RPM_BUILD_ROOT
 %{_libdir}/gedit-2/plugins/terminal.py[co]
 %dir %{_libdir}/gedit-2/plugins/sessionsaver
 %{_libdir}/gedit-2/plugins/sessionsaver/*.py[co]
+%{_libdir}/gedit-2/plugins/wordcompletion.gedit-plugin
+%{_sysconfdir}/gconf/schemas/gedit-drawspaces.schemas
 %{_sysconfdir}/gconf/schemas/gedit-show-tabbar-plugin.schemas
 %{_datadir}/gedit-2/plugins/bookmarks
+%{_datadir}/gedit-2/plugins/commander
 %{_datadir}/gedit-2/plugins/drawspaces
 %{_datadir}/gedit-2/plugins/sessionsaver
