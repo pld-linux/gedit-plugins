@@ -1,12 +1,12 @@
 Summary:	gedit plugins
 Summary(pl.UTF-8):	Wtyczki dla gedita
 Name:		gedit-plugins
-Version:	2.30.0
-Release:	3
+Version:	2.32.0
+Release:	1
 License:	GPL v2
 Group:		X11/Applications/Editors
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/gedit-plugins/2.30/%{name}-%{version}.tar.bz2
-# Source0-md5:	f1200605247b3ece1212c363f0b04c1d
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/gedit-plugins/2.32/%{name}-%{version}.tar.bz2
+# Source0-md5:	b5123846fa41f2d94992ae67e96ff79b
 Patch0:		%{name}-codegen.patch
 URL:		http://www.gnome.org/projects/gedit/
 BuildRequires:	GConf2-devel >= 2.26.0
@@ -22,6 +22,7 @@ BuildRequires:	gucharmap-devel >= 2.24.0
 BuildRequires:	intltool >= 0.40.0
 BuildRequires:	libtool
 BuildRequires:	pkgconfig
+BuildRequires:	python-dbus-devel >= 0.82
 BuildRequires:	python-gtksourceview2-devel >= 2.10.0
 BuildRequires:	python-pygobject-devel >= 2.16.0
 BuildRequires:	python-pygtk-devel >= 2:2.14.0
@@ -32,6 +33,7 @@ BuildRequires:	rpmbuild(macros) >= 1.234
 Requires(post,preun):	GConf2
 Requires:	gedit2 >= 2.30.0
 Requires:	gtksourceview2 >= 2.10.0
+Requires:	python-dbus >= 0.82
 Requires:	python-gnome-gconf >= 2.22.0
 Requires:	python-gnome-vfs >= 2.22.0
 Requires:	python-pygobject >= 2.16.0
@@ -120,8 +122,14 @@ rm -rf $RPM_BUILD_ROOT
 %{_libdir}/gedit-2/plugins/showtabbar.gedit-plugin
 %{_libdir}/gedit-2/plugins/smartspaces.gedit-plugin
 %{_libdir}/gedit-2/plugins/smartspaces.py[co]
+%{_libdir}/gedit-2/plugins/synctex.gedit-plugin
+%dir %{_libdir}/gedit-2/plugins/synctex
+%{_libdir}/gedit-2/plugins/synctex/*.py[co]
 %{_libdir}/gedit-2/plugins/terminal.gedit-plugin
 %{_libdir}/gedit-2/plugins/terminal.py[co]
+%{_libdir}/gedit-2/plugins/textsize.gedit-plugin
+%dir %{_libdir}/gedit-2/plugins/textsize
+%{_libdir}/gedit-2/plugins/textsize/*.py[co]
 %dir %{_libdir}/gedit-2/plugins/sessionsaver
 %{_libdir}/gedit-2/plugins/sessionsaver/*.py[co]
 %{_libdir}/gedit-2/plugins/wordcompletion.gedit-plugin
