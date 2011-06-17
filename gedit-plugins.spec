@@ -1,12 +1,12 @@
 Summary:	gedit plugins
 Summary(pl.UTF-8):	Wtyczki dla gedita
 Name:		gedit-plugins
-Version:	3.0.3
+Version:	3.0.4
 Release:	1
 License:	GPL v2
 Group:		X11/Applications/Editors
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/gedit-plugins/3.0/%{name}-%{version}.tar.bz2
-# Source0-md5:	4fec9affe6d22096365cd1ed32a5ae52
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/gedit-plugins/3.0/%{name}-%{version}.tar.xz
+# Source0-md5:	50963212e30d284a99d5329ca43f31da
 URL:		http://www.gnome.org/projects/gedit/
 BuildRequires:	autoconf >= 2.63
 BuildRequires:	automake >= 1:1.11
@@ -25,6 +25,8 @@ BuildRequires:	python-dbus-devel >= 0.82
 BuildRequires:	rpm-build >= 4.1-10
 BuildRequires:	rpm-pythonprov
 BuildRequires:	rpmbuild(macros) >= 1.234
+BuildRequires:	tar >= 1:1.22
+BuildRequires:	xz
 Requires:	gedit2 >= 3.0.0
 Requires:	gtksourceview3 >= 3.0.0
 Requires:	gucharmap-libs >= 3.0.0
