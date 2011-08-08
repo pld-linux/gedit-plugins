@@ -1,12 +1,12 @@
 Summary:	gedit plugins
 Summary(pl.UTF-8):	Wtyczki dla gedita
 Name:		gedit-plugins
-Version:	3.0.5
+Version:	3.0.6
 Release:	1
 License:	GPL v2
 Group:		X11/Applications/Editors
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/gedit-plugins/3.0/%{name}-%{version}.tar.xz
-# Source0-md5:	7238e171b2eb77be8330b89c4ee7ceda
+# Source0-md5:	d6b70d528570ade19c5e4410dd22608a
 URL:		http://www.gnome.org/projects/gedit/
 BuildRequires:	autoconf >= 2.63
 BuildRequires:	automake >= 1:1.11
