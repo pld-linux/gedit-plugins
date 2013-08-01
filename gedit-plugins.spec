@@ -1,23 +1,24 @@
 Summary:	gedit plugins
 Summary(pl.UTF-8):	Wtyczki dla gedita
 Name:		gedit-plugins
-Version:	3.6.1
+Version:	3.8.3
 Release:	1
 License:	GPL v2
 Group:		X11/Applications/Editors
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/gedit-plugins/3.6/%{name}-%{version}.tar.xz
-# Source0-md5:	1aafef5cbe013f6babe3b8ffe06b053d
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/gedit-plugins/3.8/%{name}-%{version}.tar.xz
+# Source0-md5:	792205da322fde72c4da7cd8a65f6855
 URL:		http://www.gnome.org/projects/gedit/
 BuildRequires:	autoconf >= 2.63
 BuildRequires:	automake >= 1:1.11
-BuildRequires:	gedit-devel >= 3.6.0
+BuildRequires:	gedit-devel >= 3.8.0
 BuildRequires:	gettext-devel >= 0.17
 BuildRequires:	glib2-devel >= 1:2.32.0
 BuildRequires:	gtk+3-devel >= 3.4.0
 BuildRequires:	gtksourceview3-devel >= 3.0.0
 BuildRequires:	intltool >= 0.40.0
-BuildRequires:	libpeas-devel >= 1.0.0
-BuildRequires:	libpeas-gtk-devel >= 1.0.0
+BuildRequires:	libgit2-glib-devel >= 0.0.2
+BuildRequires:	libpeas-devel >= 1.8.0
+BuildRequires:	libpeas-gtk-devel >= 1.8.0
 BuildRequires:	libtool >= 2:2.2
 BuildRequires:	pkgconfig
 BuildRequires:	python
@@ -27,15 +28,17 @@ BuildRequires:	rpm-pythonprov
 BuildRequires:	rpmbuild(macros) >= 1.234
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	xz
-Requires:	gedit >= 3.6.0
+Requires:	gedit >= 3.8.0
+Requires:	gtk+3 >= 3.4.0
 Requires:	gtksourceview3 >= 3.0.0
 Requires:	gucharmap-libs >= 3.0.0
-Requires:	libpeas-gtk >= 1.0.0
-Requires:	libpeas-loader-python
+Requires:	libpeas-gtk >= 1.8.0
+Requires:	libpeas-loader-python3 >= 1.8.0
 Requires:	python-dbus >= 0.82
 Requires:	python-pycairo
 Requires:	python-pygobject3 >= 3.0.0
-Requires:	python-zeitgeist >= 0.8.0
+Requires:	vte >= 0.34.0
+Requires:	zeitgeist-libs >= 0.9.12
 # sr@Latn vs. sr@latin
 Conflicts:	glibc-misc < 6:2.7
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -88,7 +91,6 @@ rm -rf $RPM_BUILD_ROOT
 %doc AUTHORS ChangeLog
 %attr(755,root,root) %{_libdir}/gedit/plugins/libbookmarks.so
 %{_libdir}/gedit/plugins/bookmarks.plugin
-%{_datadir}/gedit/plugins/bookmarks
 
 %{_libdir}/gedit/plugins/bracketcompletion.plugin
 %{_libdir}/gedit/plugins/bracketcompletion.py[co]
@@ -102,6 +104,11 @@ rm -rf $RPM_BUILD_ROOT
 
 %{_libdir}/gedit/plugins/colorpicker.plugin
 %{_libdir}/gedit/plugins/colorpicker.py[co]
+
+%{_libdir}/gedit/plugins/colorschemer.plugin
+%dir %{_libdir}/gedit/plugins/colorschemer
+%{_libdir}/gedit/plugins/colorschemer/*.py[co]
+%{_datadir}/gedit/plugins/colorschemer
 
 %{_libdir}/gedit/plugins/commander.plugin
 %dir %{_libdir}/gedit/plugins/commander
@@ -117,6 +124,10 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/gedit/plugins/libdrawspaces.so
 %{_libdir}/gedit/plugins/drawspaces.plugin
 
+%{_libdir}/gedit/plugins/git.plugin
+%dir %{_libdir}/gedit/plugins/git
+%{_libdir}/gedit/plugins/git/*.py[co]
+
 %{_libdir}/gedit/plugins/gpdefs.py[co]
 
 %{_libdir}/gedit/plugins/joinlines.plugin
@@ -126,21 +137,12 @@ rm -rf $RPM_BUILD_ROOT
 %dir %{_libdir}/gedit/plugins/multiedit
 %{_libdir}/gedit/plugins/multiedit/*.py[co]
 
-%{_libdir}/gedit/plugins/sessionsaver.plugin
-%dir %{_libdir}/gedit/plugins/sessionsaver
-%{_libdir}/gedit/plugins/sessionsaver/*.py[co]
-%{_datadir}/gedit/plugins/sessionsaver
-
 %{_libdir}/gedit/plugins/smartspaces.plugin
 %{_libdir}/gedit/plugins/smartspaces.py[co]
 
 %{_libdir}/gedit/plugins/synctex.plugin
 %dir %{_libdir}/gedit/plugins/synctex
 %{_libdir}/gedit/plugins/synctex/*.py[co]
-
-%attr(755,root,root) %{_libdir}/gedit/plugins/libtaglist.so
-%{_libdir}/gedit/plugins/taglist.plugin
-%{_datadir}/gedit/plugins/taglist
 
 %{_libdir}/gedit/plugins/terminal.plugin
 %{_libdir}/gedit/plugins/terminal.py[co]
