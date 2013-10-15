@@ -28,6 +28,7 @@ BuildRequires:	rpm-pythonprov
 BuildRequires:	rpmbuild(macros) >= 1.234
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	xz
+BuildRequires:	yelp-tools
 Requires:	gedit >= 3.8.0
 Requires:	gtk+3 >= 3.4.0
 Requires:	gtksourceview3 >= 3.0.0
