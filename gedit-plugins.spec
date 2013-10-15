@@ -2,7 +2,7 @@ Summary:	gedit plugins
 Summary(pl.UTF-8):	Wtyczki dla gedita
 Name:		gedit-plugins
 Version:	3.10.0
-Release:	1
+Release:	2
 License:	GPL v2
 Group:		X11/Applications/Editors
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/gedit-plugins/3.10/%{name}-%{version}.tar.xz
@@ -74,8 +74,6 @@ rm -rf $RPM_BUILD_ROOT
 # Remove not needed files
 %{__rm} $RPM_BUILD_ROOT%{_libdir}/gedit/plugins/*.la
 
-%py_postclean %{_libdir}/gedit/plugins
-
 %find_lang %{name} --all-name --with-gnome
 
 %clean
@@ -94,63 +92,63 @@ rm -rf $RPM_BUILD_ROOT
 %{_libdir}/gedit/plugins/bookmarks.plugin
 
 %{_libdir}/gedit/plugins/bracketcompletion.plugin
-%{_libdir}/gedit/plugins/bracketcompletion.py[co]
+%{_libdir}/gedit/plugins/bracketcompletion.py*
 
 %{_libdir}/gedit/plugins/charmap.plugin
 %dir %{_libdir}/gedit/plugins/charmap
-%{_libdir}/gedit/plugins/charmap/*.py[co]
+%{_libdir}/gedit/plugins/charmap/*.py*
 
 %{_libdir}/gedit/plugins/codecomment.plugin
-%{_libdir}/gedit/plugins/codecomment.py[co]
+%{_libdir}/gedit/plugins/codecomment.py*
 
 %{_libdir}/gedit/plugins/colorpicker.plugin
-%{_libdir}/gedit/plugins/colorpicker.py[co]
+%{_libdir}/gedit/plugins/colorpicker.py*
 
 %{_libdir}/gedit/plugins/colorschemer.plugin
 %dir %{_libdir}/gedit/plugins/colorschemer
-%{_libdir}/gedit/plugins/colorschemer/*.py[co]
+%{_libdir}/gedit/plugins/colorschemer/*.py*
 %{_datadir}/gedit/plugins/colorschemer
 
 %{_libdir}/gedit/plugins/commander.plugin
 %dir %{_libdir}/gedit/plugins/commander
 %dir %{_libdir}/gedit/plugins/commander/commands
-%{_libdir}/gedit/plugins/commander/*.py[co]
-%{_libdir}/gedit/plugins/commander/commands/*.py[co]
+%{_libdir}/gedit/plugins/commander/*.py*
+%{_libdir}/gedit/plugins/commander/commands/*.py*
 %{_datadir}/gedit/plugins/commander
 
 %{_libdir}/gedit/plugins/dashboard.plugin
 %dir %{_libdir}/gedit/plugins/dashboard
-%{_libdir}/gedit/plugins/dashboard/*.py[co]
+%{_libdir}/gedit/plugins/dashboard/*.py*
 
 %attr(755,root,root) %{_libdir}/gedit/plugins/libdrawspaces.so
 %{_libdir}/gedit/plugins/drawspaces.plugin
 
 %{_libdir}/gedit/plugins/git.plugin
 %dir %{_libdir}/gedit/plugins/git
-%{_libdir}/gedit/plugins/git/*.py[co]
+%{_libdir}/gedit/plugins/git/*.py*
 
-%{_libdir}/gedit/plugins/gpdefs.py[co]
+%{_libdir}/gedit/plugins/gpdefs.py*
 
 %{_libdir}/gedit/plugins/joinlines.plugin
-%{_libdir}/gedit/plugins/joinlines.py[co]
+%{_libdir}/gedit/plugins/joinlines.py*
 
 %{_libdir}/gedit/plugins/multiedit.plugin
 %dir %{_libdir}/gedit/plugins/multiedit
-%{_libdir}/gedit/plugins/multiedit/*.py[co]
+%{_libdir}/gedit/plugins/multiedit/*.py*
 
 %{_libdir}/gedit/plugins/smartspaces.plugin
-%{_libdir}/gedit/plugins/smartspaces.py[co]
+%{_libdir}/gedit/plugins/smartspaces.py*
 
 %{_libdir}/gedit/plugins/synctex.plugin
 %dir %{_libdir}/gedit/plugins/synctex
-%{_libdir}/gedit/plugins/synctex/*.py[co]
+%{_libdir}/gedit/plugins/synctex/*.py*
 
 %{_libdir}/gedit/plugins/terminal.plugin
-%{_libdir}/gedit/plugins/terminal.py[co]
+%{_libdir}/gedit/plugins/terminal.py*
 
 %{_libdir}/gedit/plugins/textsize.plugin
 %dir %{_libdir}/gedit/plugins/textsize
-%{_libdir}/gedit/plugins/textsize/*.py[co]
+%{_libdir}/gedit/plugins/textsize/*.py*
 
 %{_libdir}/gedit/plugins/wordcompletion.plugin
 %attr(755,root,root) %{_libdir}/gedit/plugins/libwordcompletion.so
