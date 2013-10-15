@@ -75,7 +75,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %py_postclean %{_libdir}/gedit/plugins
 
-%find_lang %{name} gedit --with-gnome
+%find_lang %{name} --all-name --with-gnome
 
 %clean
 rm -rf $RPM_BUILD_ROOT
