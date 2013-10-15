@@ -75,7 +75,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %py_postclean %{_libdir}/gedit/plugins
 
-%find_lang %{name}
+%find_lang %{name} gedit --with-gnome
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -156,3 +156,4 @@ rm -rf $RPM_BUILD_ROOT
 
 %{_datadir}/glib-2.0/schemas/org.gnome.gedit.plugins.drawspaces.gschema.xml
 %{_datadir}/glib-2.0/schemas/org.gnome.gedit.plugins.terminal.gschema.xml
+%{_datadir}/glib-2.0/schemas/org.gnome.gedit.plugins.wordcompletion.gschema.xml
