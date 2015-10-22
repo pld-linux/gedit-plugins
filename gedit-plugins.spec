@@ -1,12 +1,12 @@
 Summary:	gedit plugins
 Summary(pl.UTF-8):	Wtyczki dla gedita
 Name:		gedit-plugins
-Version:	3.16.0
+Version:	3.18.0
 Release:	1
 License:	GPL v2
 Group:		X11/Applications/Editors
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/gedit-plugins/3.16/%{name}-%{version}.tar.xz
-# Source0-md5:	1ba8fcb8535833dfdd3176cba24eb37e
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/gedit-plugins/3.18/%{name}-%{version}.tar.xz
+# Source0-md5:	aa270a66be2e578bab0f2c02b1080c64
 URL:		http://www.gnome.org/projects/gedit/
 BuildRequires:	autoconf >= 2.63
 BuildRequires:	automake >= 1:1.11
@@ -14,7 +14,7 @@ BuildRequires:	gedit-devel >= 3.16.0
 BuildRequires:	gettext-tools >= 0.17
 BuildRequires:	glib2-devel >= 1:2.32.0
 BuildRequires:	gtk+3-devel >= 3.9.0
-BuildRequires:	gtksourceview3-devel >= 3.14.0
+BuildRequires:	gtksourceview3-devel >= 3.18.0
 # Gucharmap-2.90 typelib
 BuildRequires:	gucharmap-libs >= 3.0.0
 BuildRequires:	intltool >= 0.40.0
@@ -29,6 +29,7 @@ BuildRequires:	rpm-build >= 4.1-10
 BuildRequires:	rpm-pythonprov
 BuildRequires:	rpmbuild(macros) >= 1.234
 BuildRequires:	tar >= 1:1.22
+BuildRequires:	vala >= 2:0.28.0
 # Vte-2.91 typelib
 BuildRequires:	vte >= 0.38
 BuildRequires:	xz
@@ -38,7 +39,7 @@ BuildRequires:	zeitgeist-devel >= 0.9.12
 Requires:	gedit >= 3.16.0
 Requires:	glib2 >= 1:2.32.0
 Requires:	gtk+3 >= 3.9.0
-Requires:	gtksourceview3 >= 3.14.0
+Requires:	gtksourceview3 >= 3.18.0
 # Gucharmap-2.90 typelib
 Requires:	gucharmap-libs >= 3.0.0
 Requires:	libgit2-glib >= 0.0.6
@@ -158,6 +159,10 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/gedit/plugins/libdrawspaces.so
 %{_datadir}/appdata/gedit-drawspaces.metainfo.xml
 %{_datadir}/glib-2.0/schemas/org.gnome.gedit.plugins.drawspaces.gschema.xml
+
+%{_libdir}/gedit/plugins/findinfiles.plugin
+%attr(755,root,root) %{_libdir}/gedit/plugins/libfindinfiles.so
+%{_datadir}/appdata/gedit-findinfiles.metainfo.xml
 
 %{_libdir}/gedit/plugins/git.plugin
 %dir %{_libdir}/gedit/plugins/git
