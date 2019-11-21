@@ -1,12 +1,12 @@
 Summary:	gedit plugins
 Summary(pl.UTF-8):	Wtyczki dla gedita
 Name:		gedit-plugins
-Version:	3.34.0
+Version:	3.34.1
 Release:	1
 License:	GPL v2
 Group:		X11/Applications/Editors
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/gedit-plugins/3.34/%{name}-%{version}.tar.xz
-# Source0-md5:	1edee2f5246f1fa529318a6cd3251960
+# Source0-md5:	ea7721684eba9168ab97fd2ec1703eb2
 URL:		https://wiki.gnome.org/Apps/Gedit
 BuildRequires:	appstream-glib
 BuildRequires:	gedit-devel >= 3.16.0
@@ -87,7 +87,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -f %{name}.lang
 %defattr(644,root,root,755)
-%doc AUTHORS NEWS README
+%doc AUTHORS NEWS README.md
 # common
 %dir %{_libdir}/gedit/plugins/__pycache__
 %{_libdir}/gedit/plugins/gpdefs.py
@@ -176,6 +176,14 @@ rm -rf $RPM_BUILD_ROOT
 %{_libdir}/gedit/plugins/smartspaces.py
 %{_libdir}/gedit/plugins/__pycache__/smartspaces.cpython-*.py[co]
 %{_datadir}/metainfo/gedit-smartspaces.metainfo.xml
+
+%{_libdir}/gedit/plugins/synctex.plugin
+%dir %{_libdir}/gedit/plugins/synctex
+%{_libdir}/gedit/plugins/synctex/__init__.py
+%attr(755,root,root) %{_libdir}/gedit/plugins/synctex/evince_dbus.py
+%{_libdir}/gedit/plugins/synctex/synctex.py
+%{_libdir}/gedit/plugins/synctex/__pycache__
+%{_datadir}/metainfo/gedit-synctex.metainfo.xml
 
 %{_libdir}/gedit/plugins/terminal.plugin
 %{_libdir}/gedit/plugins/terminal.py
