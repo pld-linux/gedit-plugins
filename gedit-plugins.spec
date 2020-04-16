@@ -1,42 +1,41 @@
 Summary:	gedit plugins
 Summary(pl.UTF-8):	Wtyczki dla gedita
 Name:		gedit-plugins
-Version:	3.34.1
+Version:	3.36.2
 Release:	1
 License:	GPL v2
 Group:		X11/Applications/Editors
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/gedit-plugins/3.34/%{name}-%{version}.tar.xz
-# Source0-md5:	ea7721684eba9168ab97fd2ec1703eb2
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/gedit-plugins/3.36/%{name}-%{version}.tar.xz
+# Source0-md5:	3ba77b70952534fe9527b06031ef2a58
 URL:		https://wiki.gnome.org/Apps/Gedit
 BuildRequires:	appstream-glib
-BuildRequires:	gedit-devel >= 3.16.0
+BuildRequires:	gedit-devel >= 3.36
 BuildRequires:	gettext-tools >= 0.17
 BuildRequires:	glib2-devel >= 1:2.32.0
 BuildRequires:	libpeas-devel >= 1.14.1
 BuildRequires:	libpeas-gtk-devel >= 1.14.1
-BuildRequires:	meson >= 0.49.0
+BuildRequires:	meson >= 0.50
 BuildRequires:	ninja >= 1.5
 BuildRequires:	pkgconfig
 BuildRequires:	python3 >= 1:3.2
 BuildRequires:	rpm-build >= 4.1-10
 BuildRequires:	rpm-pythonprov
 BuildRequires:	rpmbuild(macros) >= 1.736
+BuildRequires:	sed >= 4.0
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	vala >= 2:0.28.0
-BuildRequires:	vala-gedit >= 3.16
+BuildRequires:	vala-gedit >= 3.36
 BuildRequires:	xz
 BuildRequires:	yelp-tools
-# pkgconfig(zeitgeist-2.0) + Zeitgeist-2.0 typelib
-BuildRequires:	zeitgeist-devel >= 0.9.12
-Requires:	gedit >= 3.16.0
+Requires:	gedit >= 3.36
 Requires:	glib2 >= 1:2.32.0
 # Gtk-3.0 typelib
 Requires:	gtk+3 >= 3.9.0
 # GtkSource-4 typelib
 Requires:	gtksourceview4 >= 4.0
-# Gucharmap typelib
+# Gucharmap-2.90 typelib
 Requires:	gucharmap-libs >= 3.0.0
-# Ggit typelib
+# Ggit-1.0 typelib
 Requires:	libgit2-glib >= 0.0.6
 # Peas-1.0, PeasGtk-1.0 typelibs
 Requires:	libpeas-gtk >= 1.14.1
@@ -46,10 +45,6 @@ Requires:	python3-pycairo
 Requires:	python3-pygobject3 >= 3.0.0
 # Vte-2.91 typelib
 Requires:	vte >= 0.38.0
-# libzeitgeist-2.0 so + Zeitgeist-2.0 typelib
-Requires:	zeitgeist-libs >= 0.9.12
-# sr@Latn vs. sr@latin
-Conflicts:	glibc-misc < 6:2.7
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -60,6 +55,8 @@ Zestaw wtyczek dla gedita.
 
 %prep
 %setup -q
+
+%{__sed} -i -e '1s,/usr/bin/env python3,%{__python3},' plugins/synctex/synctex/evince_dbus.py
 
 %build
 %meson build
@@ -212,7 +209,3 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/gedit/plugins/libwordcompletion.so
 %{_datadir}/glib-2.0/schemas/org.gnome.gedit.plugins.wordcompletion.gschema.xml
 %{_datadir}/metainfo/gedit-wordcompletion.metainfo.xml
-
-%{_libdir}/gedit/plugins/zeitgeist.plugin
-%attr(755,root,root) %{_libdir}/gedit/plugins/libzeitgeist.so
-%{_datadir}/metainfo/gedit-zeitgeist.metainfo.xml
