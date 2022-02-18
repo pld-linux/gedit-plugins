@@ -1,17 +1,17 @@
 Summary:	gedit plugins
 Summary(pl.UTF-8):	Wtyczki dla gedita
 Name:		gedit-plugins
-Version:	40.1
+Version:	41.0
 Release:	1
 License:	GPL v2
 Group:		X11/Applications/Editors
-Source0:	https://download.gnome.org/sources/gedit-plugins/40/%{name}-%{version}.tar.xz
-# Source0-md5:	71abe6a1d17cdcd9d2cbdc698c7eff8e
+Source0:	https://download.gnome.org/sources/gedit-plugins/41/%{name}-%{version}.tar.xz
+# Source0-md5:	f9a1fcf2f7143a50a0e95c9721eb5969
 URL:		https://wiki.gnome.org/Apps/Gedit
 BuildRequires:	appstream-glib
-BuildRequires:	gedit-devel >= 40.0
+BuildRequires:	gedit-devel >= 41.0
 BuildRequires:	gettext-tools >= 0.17
-BuildRequires:	glib2-devel >= 1:2.32.0
+BuildRequires:	glib2-devel >= 1:2.64
 BuildRequires:	libpeas-devel >= 1.14.1
 BuildRequires:	libpeas-gtk-devel >= 1.14.1
 BuildRequires:	meson >= 0.50
@@ -24,15 +24,15 @@ BuildRequires:	rpmbuild(macros) >= 1.736
 BuildRequires:	sed >= 4.0
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	vala >= 2:0.28.0
-BuildRequires:	vala-gedit >= 40.0
+BuildRequires:	vala-gedit >= 41.0
 BuildRequires:	xz
 BuildRequires:	yelp-tools
 Requires:	gedit >= 40.0
-Requires:	glib2 >= 1:2.32.0
+Requires:	glib2 >= 1:2.64
 # Gtk-3.0 typelib
-Requires:	gtk+3 >= 3.9.0
+Requires:	gtk+3 >= 3.22
 # GtkSource-4 typelib
-Requires:	gtksourceview4 >= 4.0
+Requires:	gtksourceview4 >= 4.0.2
 # Gucharmap-2.90 typelib
 Requires:	gucharmap-libs >= 3.0.0
 # Ggit-1.0 typelib
