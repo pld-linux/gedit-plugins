@@ -1,15 +1,15 @@
 Summary:	gedit plugins
 Summary(pl.UTF-8):	Wtyczki dla gedita
 Name:		gedit-plugins
-Version:	41.0
+Version:	42.0
 Release:	1
 License:	GPL v2
 Group:		X11/Applications/Editors
-Source0:	https://download.gnome.org/sources/gedit-plugins/41/%{name}-%{version}.tar.xz
-# Source0-md5:	f9a1fcf2f7143a50a0e95c9721eb5969
+Source0:	https://download.gnome.org/sources/gedit-plugins/42/%{name}-%{version}.tar.xz
+# Source0-md5:	99438a750f298e6a1e203bdfc3964718
 URL:		https://wiki.gnome.org/Apps/Gedit
 BuildRequires:	appstream-glib
-BuildRequires:	gedit-devel >= 41.0
+BuildRequires:	gedit-devel >= 42.0
 BuildRequires:	gettext-tools >= 0.17
 BuildRequires:	glib2-devel >= 1:2.64
 BuildRequires:	libpeas-devel >= 1.14.1
@@ -24,10 +24,10 @@ BuildRequires:	rpmbuild(macros) >= 1.736
 BuildRequires:	sed >= 4.0
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	vala >= 2:0.28.0
-BuildRequires:	vala-gedit >= 41.0
+BuildRequires:	vala-gedit >= 42.0
 BuildRequires:	xz
 BuildRequires:	yelp-tools
-Requires:	gedit >= 40.0
+Requires:	gedit >= 42.0
 Requires:	glib2 >= 1:2.64
 # Gtk-3.0 typelib
 Requires:	gtk+3 >= 3.22
