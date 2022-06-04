@@ -1,12 +1,12 @@
 Summary:	gedit plugins
 Summary(pl.UTF-8):	Wtyczki dla gedita
 Name:		gedit-plugins
-Version:	42.0
+Version:	42.1
 Release:	1
 License:	GPL v2
 Group:		X11/Applications/Editors
 Source0:	https://download.gnome.org/sources/gedit-plugins/42/%{name}-%{version}.tar.xz
-# Source0-md5:	99438a750f298e6a1e203bdfc3964718
+# Source0-md5:	d101c446fcc2b2bcaf3688e3000cbd6e
 URL:		https://wiki.gnome.org/Apps/Gedit
 BuildRequires:	appstream-glib
 BuildRequires:	gedit-devel >= 42.0
