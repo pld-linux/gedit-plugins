@@ -1,15 +1,15 @@
 Summary:	gedit plugins
 Summary(pl.UTF-8):	Wtyczki dla gedita
 Name:		gedit-plugins
-Version:	42.1
+Version:	43.1
 Release:	1
 License:	GPL v2
 Group:		X11/Applications/Editors
-Source0:	https://download.gnome.org/sources/gedit-plugins/42/%{name}-%{version}.tar.xz
-# Source0-md5:	d101c446fcc2b2bcaf3688e3000cbd6e
+Source0:	https://download.gnome.org/sources/gedit-plugins/43/%{name}-%{version}.tar.xz
+# Source0-md5:	522cb585025161a703e8b5bc0e3bf9db
 URL:		https://wiki.gnome.org/Apps/Gedit
 BuildRequires:	appstream-glib
-BuildRequires:	gedit-devel >= 42.0
+BuildRequires:	gedit-devel >= 43.0
 BuildRequires:	gettext-tools >= 0.17
 BuildRequires:	glib2-devel >= 1:2.64
 BuildRequires:	libpeas-devel >= 1.14.1
@@ -24,10 +24,10 @@ BuildRequires:	rpmbuild(macros) >= 1.736
 BuildRequires:	sed >= 4.0
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	vala >= 2:0.28.0
-BuildRequires:	vala-gedit >= 42.0
+BuildRequires:	vala-gedit >= 43.0
 BuildRequires:	xz
 BuildRequires:	yelp-tools
-Requires:	gedit >= 42.0
+Requires:	gedit >= 43.0
 Requires:	glib2 >= 1:2.64
 # Gtk-3.0 typelib
 Requires:	gtk+3 >= 3.22
@@ -84,7 +84,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -f %{name}.lang
 %defattr(644,root,root,755)
-%doc AUTHORS NEWS README.md
+%doc NEWS README.md
 # common
 %dir %{_libdir}/gedit/plugins/__pycache__
 %{_libdir}/gedit/plugins/gpdefs.py
@@ -124,24 +124,10 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/gedit/plugins/colorschemer
 %{_datadir}/metainfo/gedit-colorschemer.metainfo.xml
 
-%{_libdir}/gedit/plugins/commander.plugin
-%dir %{_libdir}/gedit/plugins/commander
-%{_libdir}/gedit/plugins/commander/*.py
-%{_libdir}/gedit/plugins/commander/__pycache__
-%dir %{_libdir}/gedit/plugins/commander/commands
-%{_libdir}/gedit/plugins/commander/commands/*.py*
-%{_libdir}/gedit/plugins/commander/commands/__pycache__
-%{_datadir}/gedit/plugins/commander
-%{_datadir}/metainfo/gedit-commander.metainfo.xml
-
 %{_libdir}/gedit/plugins/drawspaces.plugin
 %attr(755,root,root) %{_libdir}/gedit/plugins/libdrawspaces.so
 %{_datadir}/glib-2.0/schemas/org.gnome.gedit.plugins.drawspaces.gschema.xml
 %{_datadir}/metainfo/gedit-drawspaces.metainfo.xml
-
-%{_libdir}/gedit/plugins/findinfiles.plugin
-%attr(755,root,root) %{_libdir}/gedit/plugins/libfindinfiles.so
-%{_datadir}/metainfo/gedit-findinfiles.metainfo.xml
 
 %{_libdir}/gedit/plugins/git.plugin
 %dir %{_libdir}/gedit/plugins/git
@@ -192,17 +178,6 @@ rm -rf $RPM_BUILD_ROOT
 %{_libdir}/gedit/plugins/textsize/*.py
 %{_libdir}/gedit/plugins/textsize/__pycache__
 %{_datadir}/metainfo/gedit-textsize.metainfo.xml
-
-%{_libdir}/gedit/plugins/translate.plugin
-%dir %{_libdir}/gedit/plugins/translate
-%{_libdir}/gedit/plugins/translate/*.py
-%{_libdir}/gedit/plugins/translate/__pycache__
-%dir %{_libdir}/gedit/plugins/translate/services
-%{_libdir}/gedit/plugins/translate/services/*.py
-%{_libdir}/gedit/plugins/translate/services/__pycache__
-%{_datadir}/gedit/plugins/translate
-%{_datadir}/glib-2.0/schemas/org.gnome.gedit.plugins.translate.gschema.xml
-%{_datadir}/metainfo/gedit-translate.metainfo.xml
 
 %{_libdir}/gedit/plugins/wordcompletion.plugin
 %attr(755,root,root) %{_libdir}/gedit/plugins/libwordcompletion.so
