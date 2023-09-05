@@ -1,40 +1,38 @@
 Summary:	gedit plugins
 Summary(pl.UTF-8):	Wtyczki dla gedita
 Name:		gedit-plugins
-Version:	44.1
+Version:	45.0
 Release:	1
 License:	GPL v2
 Group:		X11/Applications/Editors
-Source0:	https://download.gnome.org/sources/gedit-plugins/44/%{name}-%{version}.tar.xz
-# Source0-md5:	02841bc9ee6657bbd33ea99e3b1f46cb
+Source0:	https://download.gnome.org/sources/gedit-plugins/45/%{name}-%{version}.tar.xz
+# Source0-md5:	a9b5474cc3bc8702b1a8d22c0b25620b
 URL:		https://wiki.gnome.org/Apps/Gedit
 BuildRequires:	appstream-glib
-BuildRequires:	gedit-devel >= 44.0
+BuildRequires:	gedit-devel >= 45.0
 BuildRequires:	gettext-tools >= 0.17
 BuildRequires:	glib2-devel >= 1:2.64
 BuildRequires:	libpeas-devel >= 1.14.1
 BuildRequires:	libpeas-gtk-devel >= 1.14.1
-BuildRequires:	meson >= 0.50
+BuildRequires:	meson >= 0.57
 BuildRequires:	ninja >= 1.5
 BuildRequires:	pkgconfig
 BuildRequires:	python3 >= 1:3.2
 BuildRequires:	rpm-build >= 4.1-10
 BuildRequires:	rpm-pythonprov
 BuildRequires:	rpmbuild(macros) >= 1.736
-BuildRequires:	sed >= 4.0
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	vala >= 2:0.28.0
-BuildRequires:	vala-gedit >= 44.0
 BuildRequires:	xz
 BuildRequires:	yelp-tools
-Requires:	gedit >= 44.0
+Requires:	gedit >= 45.0
 Requires:	glib2 >= 1:2.64
 # Gtk-3.0 typelib
 Requires:	gtk+3 >= 3.22
-# GtkSource-4 typelib
-Requires:	gtksourceview4 >= 4.0.2
 # Gucharmap-2.90 typelib
 Requires:	gucharmap-libs >= 3.0.0
+# GtkSource-300 typelib
+Requires:	libgedit-gtksourceview >= 299
 # Ggit-1.0 typelib
 Requires:	libgit2-glib >= 0.0.6
 # Peas-1.0, PeasGtk-1.0 typelibs
@@ -55,8 +53,6 @@ Zestaw wtyczek dla gedita.
 
 %prep
 %setup -q
-
-%{__sed} -i -e '1s,/usr/bin/env python3,%{__python3},' plugins/synctex/synctex/evince_dbus.py
 
 %build
 %meson build
@@ -117,13 +113,6 @@ rm -rf $RPM_BUILD_ROOT
 %{_libdir}/gedit/plugins/__pycache__/colorpicker.cpython-*.py[co]
 %{_datadir}/metainfo/gedit-colorpicker.metainfo.xml
 
-%{_libdir}/gedit/plugins/colorschemer.plugin
-%dir %{_libdir}/gedit/plugins/colorschemer
-%{_libdir}/gedit/plugins/colorschemer/*.py
-%{_libdir}/gedit/plugins/colorschemer/__pycache__
-%{_datadir}/gedit/plugins/colorschemer
-%{_datadir}/metainfo/gedit-colorschemer.metainfo.xml
-
 %{_libdir}/gedit/plugins/drawspaces.plugin
 %attr(755,root,root) %{_libdir}/gedit/plugins/libdrawspaces.so
 %{_datadir}/glib-2.0/schemas/org.gnome.gedit.plugins.drawspaces.gschema.xml
@@ -158,14 +147,6 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/gedit/plugins/libsmartspaces.so
 %{_libdir}/gedit/plugins/smartspaces.plugin
 %{_datadir}/metainfo/gedit-smartspaces.metainfo.xml
-
-%{_libdir}/gedit/plugins/synctex.plugin
-%dir %{_libdir}/gedit/plugins/synctex
-%{_libdir}/gedit/plugins/synctex/__init__.py
-%attr(755,root,root) %{_libdir}/gedit/plugins/synctex/evince_dbus.py
-%{_libdir}/gedit/plugins/synctex/synctex.py
-%{_libdir}/gedit/plugins/synctex/__pycache__
-%{_datadir}/metainfo/gedit-synctex.metainfo.xml
 
 %{_libdir}/gedit/plugins/terminal.plugin
 %{_libdir}/gedit/plugins/terminal.py
