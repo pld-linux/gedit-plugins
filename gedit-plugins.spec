@@ -1,15 +1,15 @@
 Summary:	gedit plugins
 Summary(pl.UTF-8):	Wtyczki dla gedita
 Name:		gedit-plugins
-Version:	47.1
+Version:	48.0
 Release:	1
 License:	GPL v2
 Group:		X11/Applications/Editors
-Source0:	https://download.gnome.org/sources/gedit-plugins/47/%{name}-%{version}.tar.xz
-# Source0-md5:	116b3ba0e6f03980ac23aebe7c99959c
+Source0:	https://download.gnome.org/sources/gedit-plugins/48/%{name}-%{version}.tar.xz
+# Source0-md5:	7a1ad5645ea4892083a6ca0205a389c6
 URL:		https://wiki.gnome.org/Apps/Gedit
 BuildRequires:	appstream-glib
-BuildRequires:	gedit-devel >= 47.0
+BuildRequires:	gedit-devel >= 48.0
 BuildRequires:	gettext-tools >= 0.17
 BuildRequires:	glib2-devel >= 1:2.64
 BuildRequires:	libgedit-gtksourceview-devel >= 299
@@ -26,7 +26,7 @@ BuildRequires:	tar >= 1:1.22
 BuildRequires:	vala >= 2:0.28.0
 BuildRequires:	xz
 BuildRequires:	yelp-tools
-Requires:	gedit >= 47.0
+Requires:	gedit >= 48.0
 Requires:	glib2 >= 1:2.64
 # Gtk-3.0 typelib
 Requires:	gtk+3 >= 3.22
@@ -34,8 +34,6 @@ Requires:	gtk+3 >= 3.22
 Requires:	gucharmap-libs >= 3.0.0
 # GtkSource-300 typelib
 Requires:	libgedit-gtksourceview >= 299
-# Ggit-1.0 typelib
-Requires:	libgit2-glib >= 0.0.6
 # Peas-1.0, PeasGtk-1.0 typelibs
 Requires:	libpeas-gtk >= 1.14.1
 Requires:	libpeas-loader-python3 >= 1.14.1
@@ -119,12 +117,6 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/glib-2.0/schemas/org.gnome.gedit.plugins.drawspaces.gschema.xml
 %{_datadir}/metainfo/gedit-drawspaces.metainfo.xml
 
-%{_libdir}/gedit/plugins/git.plugin
-%dir %{_libdir}/gedit/plugins/git
-%{_libdir}/gedit/plugins/git/*.py*
-%{_libdir}/gedit/plugins/git/__pycache__
-%{_datadir}/metainfo/gedit-git.metainfo.xml
-
 %{_libdir}/gedit/plugins/joinlines.plugin
 %{_libdir}/gedit/plugins/joinlines.py
 %{_libdir}/gedit/plugins/__pycache__/joinlines.cpython-*.py[co]
@@ -154,12 +146,6 @@ rm -rf $RPM_BUILD_ROOT
 %{_libdir}/gedit/plugins/__pycache__/terminal.cpython-*.py[co]
 %{_datadir}/glib-2.0/schemas/org.gnome.gedit.plugins.terminal.gschema.xml
 %{_datadir}/metainfo/gedit-terminal.metainfo.xml
-
-%{_libdir}/gedit/plugins/textsize.plugin
-%dir %{_libdir}/gedit/plugins/textsize
-%{_libdir}/gedit/plugins/textsize/*.py
-%{_libdir}/gedit/plugins/textsize/__pycache__
-%{_datadir}/metainfo/gedit-textsize.metainfo.xml
 
 %{_libdir}/gedit/plugins/wordcompletion.plugin
 %attr(755,root,root) %{_libdir}/gedit/plugins/libwordcompletion.so
