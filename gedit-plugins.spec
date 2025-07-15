@@ -54,14 +54,14 @@ Zestaw wtyczek dla gedita.
 %setup -q
 
 %build
-%meson build
+%meson
 
-%ninja_build -C build
+%meson_build
 
 %install
 rm -rf $RPM_BUILD_ROOT
 
-%ninja_install -C build
+%meson_install
 
 %py3_comp $RPM_BUILD_ROOT%{_libdir}/gedit/plugins
 %py3_ocomp $RPM_BUILD_ROOT%{_libdir}/gedit/plugins
